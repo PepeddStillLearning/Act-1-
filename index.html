@@ -7,27 +7,20 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <!-- Header & Navigasi Kategori -->
   <header class="site-header">
     <div class="container">
-      <!-- Baris Atas Header -->
       <div class="header-top">
         <a href="#" class="logo">Shopee</a>
-
-        <form class="search-bar" onsubmit="event.preventDefault();">
+        <form class="search-bar" onsubmit="return false">
           <input type="text" placeholder="Cari produk atau nama toko" aria-label="Cari produk" />
-          <button type="submit" class="btn-search">Cari</button>
+          <button type="submit" class="btn btn-orange">Cari</button>
         </form>
-
         <div class="header-actions">
           <a href="#" class="cart-link" id="cart-counter">Keranjang (0)</a>
-          <button type="button" class="btn-outline">Masuk</button>
-          <button type="button" class="btn-dark">Daftar</button>
+          <button type="button" class="btn btn-outline">Masuk</button>
+          <button type="button" class="btn btn-dark">Daftar</button>
         </div>
       </div>
-
-      <!-- Baris Kategori -->
       <nav class="category-nav" aria-label="Kategori Produk">
         <ul>
           <li><a href="#" class="active">Semua kategori</a></li>
@@ -42,17 +35,14 @@
     </div>
   </header>
 
-  <!-- Konten Utama -->
   <main class="container">
-    <!-- Hero Banner -->
     <section class="hero-banner">
       <div class="hero-content">
-        <span class="promo-tag">PROMO PILIHAN</span>
+        <span class="promo-tag">Promo pilihan</span>
         <h1>Belanja kebutuhan, lebih hemat</h1>
         <p>Temukan penawaran spesial untuk produk pilihan minggu ini.</p>
-        <a href="#rekomendasi" class="btn-primary">Lihat promo</a>
+        <a href="#rekomendasi" class="btn btn-orange">Lihat promo</a>
       </div>
-
       <div class="hero-graphic" aria-hidden="true">
         <div class="big-sale-badge">
           <span class="sparkle s1">✦</span>
@@ -64,7 +54,6 @@
       </div>
     </section>
 
-    <!-- Bagian Rekomendasi -->
     <section id="rekomendasi" class="products-section">
       <div class="section-header">
         <div>
@@ -73,77 +62,10 @@
         </div>
         <a href="#" class="view-all">Lihat semua produk</a>
       </div>
-
-      <!-- Grid Kartu Produk -->
-      <div class="product-grid">
-        <!-- Produk 1 -->
-        <article class="product-card">
-          <div class="product-img-wrapper">
-            <img
-              src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80"
-              alt="Headphone wireless"
-            />
-          </div>
-          <div class="product-info">
-            <h3 class="product-title">Headphone wireless</h3>
-            <p class="product-price">Rp249.000</p>
-            <p class="product-meta">Toko Audio &bull; Jakarta</p>
-            <button type="button" class="btn-add-cart">+ Keranjang</button>
-          </div>
-        </article>
-
-        <!-- Produk 2 -->
-        <article class="product-card">
-          <div class="product-img-wrapper">
-            <img
-              src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=600&q=80"
-              alt="Kaos katun unisex"
-            />
-          </div>
-          <div class="product-info">
-            <h3 class="product-title">Kaos katun unisex</h3>
-            <p class="product-price">Rp89.000</p>
-            <p class="product-meta">Pakaian Kita &bull; Bandung</p>
-            <button type="button" class="btn-add-cart">+ Keranjang</button>
-          </div>
-        </article>
-
-        <!-- Produk 3 -->
-        <article class="product-card">
-          <div class="product-img-wrapper">
-            <img
-              src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=600&q=80"
-              alt="Lampu meja minimalis"
-            />
-          </div>
-          <div class="product-info">
-            <h3 class="product-title">Lampu meja minimalis</h3>
-            <p class="product-price">Rp159.000</p>
-            <p class="product-meta">Rumah Nyaman &bull; Surabaya</p>
-            <button type="button" class="btn-add-cart">+ Keranjang</button>
-          </div>
-        </article>
-
-        <!-- Produk 4 -->
-        <article class="product-card">
-          <div class="product-img-wrapper">
-            <img
-              src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=600&q=80"
-              alt="Botol minum 750 ml"
-            />
-          </div>
-          <div class="product-info">
-            <h3 class="product-title">Botol minum 750 ml</h3>
-            <p class="product-price">Rp65.000</p>
-            <p class="product-meta">Teman Aktivitas &bull; Tangerang</p>
-            <button type="button" class="btn-add-cart">+ Keranjang</button>
-          </div>
-        </article>
-      </div>
+      <div class="product-grid" id="product-grid"></div>
     </section>
   </main>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-top">
@@ -151,7 +73,6 @@
           <span class="logo">Shopee</span>
           <p>Tempat belanja kebutuhan sehari-hari.</p>
         </div>
-
         <nav class="footer-links" aria-label="Tautan Footer">
           <a href="#">Tentang kami</a>
           <a href="#">Pusat bantuan</a>
@@ -159,39 +80,43 @@
           <a href="#">Kebijakan privasi</a>
         </nav>
       </div>
-
-      <div class="footer-bottom">
-        <p>&copy; 2026 Shopee. Seluruh hak cipta dilindungi.</p>
-      </div>
+      <p class="footer-bottom">&copy; 2026 Shopee. Seluruh hak cipta dilindungi.</p>
     </div>
   </footer>
 
-  <!-- Script sederhana untuk interaksi tombol + Keranjang & Kategori -->
   <script>
+    const $ = s => document.querySelector(s);
+    // Produk: [judul, harga, toko, kota, id foto Unsplash]
+    const products = [
+      ['Headphone wireless', '249.000', 'Toko Audio', 'Jakarta', '1505740420928-5e560c06d30e'],
+      ['Kaos katun unisex', '89.000', 'Pakaian Kita', 'Bandung', '1521572163474-6864f9cf17ab'],
+      ['Lampu meja minimalis', '159.000', 'Rumah Nyaman', 'Surabaya', '1507473885765-e6ed057f782c'],
+      ['Botol minum 750 ml', '65.000', 'Teman Aktivitas', 'Tangerang', '1602143407151-7111542de6e8']
+    ];
+    $('#product-grid').innerHTML = products.map(([title, price, shop, city, img]) => `
+      <article class="product-card">
+        <div class="product-img-wrapper">
+          <img src="https://images.unsplash.com/photo-${img}?auto=format&fit=crop&w=600&q=80" alt="${title}" loading="lazy" /></div>
+        <div class="product-info">
+          <h3 class="product-title">${title}</h3>
+          <p class="product-price">Rp${price}</p>
+          <p class="product-meta">${shop} &bull; ${city}</p>
+          <button type="button" class="btn btn-orange btn-block">+ Keranjang</button>
+        </div>
+      </article>`).join('');
+
+    // Keranjang
     let count = 0;
-    const cartCounter = document.getElementById('cart-counter');
-    const addButtons = document.querySelectorAll('.btn-add-cart');
+    $('#product-grid').onclick = e => e.target.matches('.btn') && ($('#cart-counter').textContent = `Keranjang (${++count})`);
 
-    addButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        count++;
-        cartCounter.textContent = `Keranjang (${count})`;
-      });
-    });
-
-    const catLinks = document.querySelectorAll('.category-nav a');
-    catLinks.forEach(link => {
-       link.addEventListener('click', (e) => {
-    const href = link.getAttribute('href');
-    // Hanya cegah aksi default jika link masih '#' (belum punya halaman tujuan)
-    if (!href || href === '#') {
-      e.preventDefault();
-    }
-        catLinks.forEach(item => item.classList.remove('active'));
-        link.classList.add('active');
-      });
-    });
+    // Navigasi kategori: cegah lompat hanya untuk link yang masih '#'
+    $('.category-nav').onclick = e => {
+      const link = e.target.closest('a');
+      if (!link) return;
+      if (link.getAttribute('href') === '#') e.preventDefault();
+      $('.category-nav .active').classList.remove('active');
+      link.classList.add('active');
+    };
   </script>
-
 </body>
 </html>
