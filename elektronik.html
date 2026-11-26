@@ -7,27 +7,20 @@
   <link rel="stylesheet" href="elektronik.css" />
 </head>
 <body>
-
-  <!-- Header & Navigasi Kategori -->
   <header class="site-header">
     <div class="container">
-      <!-- Baris Atas Header -->
       <div class="header-top">
         <a href="index.html" class="logo">Shopee</a>
-
-        <form class="search-bar" onsubmit="event.preventDefault();">
+        <form class="search-bar" onsubmit="return false">
           <input type="text" placeholder="Cari produk atau nama toko" aria-label="Cari produk" />
-          <button type="submit" class="btn-search">Cari</button>
+          <button type="submit" class="btn btn-orange">Cari</button>
         </form>
-
         <div class="header-actions">
           <a href="#" class="cart-link" id="cart-counter">Keranjang (0)</a>
-          <button type="button" class="btn-outline">Masuk</button>
-          <button type="button" class="btn-dark">Daftar</button>
+          <button type="button" class="btn btn-outline">Masuk</button>
+          <button type="button" class="btn btn-dark">Daftar</button>
         </div>
       </div>
-
-      <!-- Baris Kategori -->
       <nav class="category-nav" aria-label="Kategori Produk">
         <ul>
           <li><a href="index.html">Semua kategori</a></li>
@@ -42,126 +35,27 @@
     </div>
   </header>
 
-  <!-- Konten Utama -->
   <main class="container">
-    <!-- Breadcrumb -->
     <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="index.html">Beranda</a>
-      <span>/</span>
-      <span class="current">Elektronik</span>
+      <a href="index.html">Beranda</a> / <span class="current">Elektronik</span>
     </nav>
-
-    <!-- Judul Halaman Kategori -->
     <section class="category-header">
       <h1>Elektronik</h1>
       <p>Temukan gawai, audio, dan aksesori pilihan untuk mendukung aktivitasmu.</p>
     </section>
+    <section class="subcategories-grid" id="subcategories" aria-label="Subkategori Elektronik"></section>
 
-    <!-- Subkategori Pills -->
-    <section class="subcategories-grid" aria-label="Subkategori Elektronik">
-      <button type="button" class="subcat-card">Audio</button>
-      <button type="button" class="subcat-card">Komputer &amp; aksesori</button>
-      <button type="button" class="subcat-card">Aksesori ponsel</button>
-      <button type="button" class="subcat-card">Kamera</button>
-    </section>
-
-    <!-- Layout Utama: Sidebar Filter + Katalog Produk -->
     <div class="catalog-layout">
-      <!-- Sidebar Filter -->
       <aside class="filter-sidebar">
         <div class="filter-header">
           <h2>Filter</h2>
-          <button type="button" class="btn-reset" id="reset-filter">Atur ulang</button>
+          <button type="reset" form="filter-form" class="btn-reset">Atur ulang</button>
         </div>
-
-        <form id="filter-form" onsubmit="event.preventDefault();">
-          <!-- Filter Kategori -->
-          <div class="filter-group">
-            <h3>Kategori</h3>
-            <label class="checkbox-item">
-              <input type="checkbox" name="kategori" value="audio" />
-              <span>Audio</span>
-            </label>
-            <label class="checkbox-item">
-              <input type="checkbox" name="kategori" value="komputer" />
-              <span>Komputer &amp; aksesori</span>
-            </label>
-            <label class="checkbox-item">
-              <input type="checkbox" name="kategori" value="ponsel" />
-              <span>Aksesori ponsel</span>
-            </label>
-            <label class="checkbox-item">
-              <input type="checkbox" name="kategori" value="kamera" />
-              <span>Kamera</span>
-            </label>
-          </div>
-
-          <!-- Filter Harga -->
-          <div class="filter-group">
-            <h3>Harga</h3>
-            <div class="price-inputs">
-              <input type="text" placeholder="Rp Harga minimum" aria-label="Harga minimum" />
-              <input type="text" placeholder="Rp Harga maksimum" aria-label="Harga maksimum" />
-            </div>
-          </div>
-
-          <!-- Filter Merek -->
-          <div class="filter-group">
-            <h3>Merek</h3>
-            <label class="checkbox-item">
-              <input type="checkbox" name="merek" value="audiokita" />
-              <span>AudioKita</span>
-            </label>
-            <label class="checkbox-item">
-              <input type="checkbox" name="merek" value="gawai" />
-              <span>Gawai</span>
-            </label>
-            <label class="checkbox-item">
-              <input type="checkbox" name="merek" value="digitalpro" />
-              <span>DigitalPro</span>
-            </label>
-          </div>
-
-          <!-- Filter Lokasi Toko -->
-          <div class="filter-group">
-            <h3>Lokasi toko</h3>
-            <label class="checkbox-item">
-              <input type="checkbox" name="lokasi" value="jakarta" />
-              <span>Jakarta</span>
-            </label>
-            <label class="checkbox-item">
-              <input type="checkbox" name="lokasi" value="bandung" />
-              <span>Bandung</span>
-            </label>
-            <label class="checkbox-item">
-              <input type="checkbox" name="lokasi" value="surabaya" />
-              <span>Surabaya</span>
-            </label>
-          </div>
-
-          <!-- Filter Penilaian -->
-          <div class="filter-group no-border">
-            <h3>Penilaian</h3>
-            <label class="checkbox-item">
-              <input type="checkbox" name="rating" value="4plus" />
-              <span><span class="star-icon">&#9733;</span> 4 ke atas</span>
-            </label>
-            <label class="checkbox-item">
-              <input type="checkbox" name="ongkir" value="gratis" />
-              <span>Gratis ongkir</span>
-            </label>
-          </div>
-
-          <button type="submit" class="btn-apply-filter">Terapkan filter</button>
-        </form>
+        <form id="filter-form" onsubmit="return false"></form>
       </aside>
-
-      <!-- Bagian Kanan: Toolbar, Grid Produk, Pagination, Info Box -->
       <section class="catalog-content">
-        <!-- Toolbar Atas -->
         <div class="catalog-toolbar">
           <p class="result-count">Menampilkan 1–6 dari 18 produk</p>
-
           <div class="sort-control">
             <label for="sort-select">Urutkan:</label>
             <select id="sort-select">
@@ -173,112 +67,8 @@
           </div>
         </div>
 
-        <!-- Grid Produk (3 Kolom x 2 Baris) -->
-        <div class="product-grid">
-          <!-- Produk 1 -->
-          <article class="product-card">
-            <div class="product-img-wrapper">
-              <img
-                src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80"
-                alt="Headphone wireless"
-              />
-            </div>
-            <div class="product-info">
-              <h3 class="product-title">Headphone wireless</h3>
-              <p class="product-price">Rp249.000</p>
-              <p class="product-meta">Toko Audio &bull; Jakarta</p>
-              <p class="product-rating"><span class="star-icon">&#9733;</span> 4,9 &bull; Terjual 120+</p>
-              <button type="button" class="btn-add-cart">+ Keranjang</button>
-            </div>
-          </article>
+        <div class="product-grid" id="product-grid"></div>
 
-          <!-- Produk 2 -->
-          <article class="product-card">
-            <div class="product-img-wrapper">
-              <img
-                src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=600&q=80"
-                alt="Keyboard wireless"
-              />
-            </div>
-            <div class="product-info">
-              <h3 class="product-title">Keyboard wireless</h3>
-              <p class="product-price">Rp179.000</p>
-              <p class="product-meta">Gawai Kita &bull; Jakarta</p>
-              <p class="product-rating"><span class="star-icon">&#9733;</span> 4,8 &bull; Terjual 90+</p>
-              <button type="button" class="btn-add-cart">+ Keranjang</button>
-            </div>
-          </article>
-
-          <!-- Produk 3 -->
-          <article class="product-card">
-            <div class="product-img-wrapper">
-              <img
-                src="https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?auto=format&fit=crop&w=600&q=80"
-                alt="Mouse nirkabel"
-              />
-            </div>
-            <div class="product-info">
-              <h3 class="product-title">Mouse nirkabel</h3>
-              <p class="product-price">Rp99.000</p>
-              <p class="product-meta">Digital Jaya &bull; Surabaya</p>
-              <p class="product-rating"><span class="star-icon">&#9733;</span> 4,8 &bull; Terjual 200+</p>
-              <button type="button" class="btn-add-cart">+ Keranjang</button>
-            </div>
-          </article>
-
-          <!-- Produk 4 -->
-          <article class="product-card">
-            <div class="product-img-wrapper">
-              <img
-                src="https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=600&q=80"
-                alt="Speaker bluetooth mini"
-              />
-            </div>
-            <div class="product-info">
-              <h3 class="product-title">Speaker bluetooth mini</h3>
-              <p class="product-price">Rp189.000</p>
-              <p class="product-meta">Toko Audio &bull; Jakarta</p>
-              <p class="product-rating"><span class="star-icon">&#9733;</span> 4,7 &bull; Terjual 150+</p>
-              <button type="button" class="btn-add-cart">+ Keranjang</button>
-            </div>
-          </article>
-
-          <!-- Produk 5 -->
-          <article class="product-card">
-            <div class="product-img-wrapper">
-              <img
-                src="https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?auto=format&fit=crop&w=600&q=80"
-                alt="Powerbank 10.000 mAh"
-              />
-            </div>
-            <div class="product-info">
-              <h3 class="product-title">Powerbank 10.000 mAh</h3>
-              <p class="product-price">Rp199.000</p>
-              <p class="product-meta">Gawai Kita &bull; Jakarta</p>
-              <p class="product-rating"><span class="star-icon">&#9733;</span> 4,9 &bull; Terjual 180+</p>
-              <button type="button" class="btn-add-cart">+ Keranjang</button>
-            </div>
-          </article>
-
-          <!-- Produk 6 -->
-          <article class="product-card">
-            <div class="product-img-wrapper">
-              <img
-                src="https://images.unsplash.com/photo-1588508065123-287b28e013da?auto=format&fit=crop&w=600&q=80"
-                alt="Kamera web HD 1080p"
-              />
-            </div>
-            <div class="product-info">
-              <h3 class="product-title">Kamera web HD 1080p</h3>
-              <p class="product-price">Rp289.000</p>
-              <p class="product-meta">Digital Jaya &bull; Surabaya</p>
-              <p class="product-rating"><span class="star-icon">&#9733;</span> 4,8 &bull; Terjual 65+</p>
-              <button type="button" class="btn-add-cart">+ Keranjang</button>
-            </div>
-          </article>
-        </div>
-
-        <!-- Pagination -->
         <nav class="pagination" aria-label="Navigasi Halaman">
           <button type="button" class="page-btn">Sebelumnya</button>
           <button type="button" class="page-num active">1</button>
@@ -287,7 +77,6 @@
           <button type="button" class="page-btn">Berikutnya</button>
         </nav>
 
-        <!-- Kotak Panduan Bawah -->
         <div class="info-banner">
           <h3>Pilih gawai yang sesuai kebutuhanmu</h3>
           <p>Bandingkan spesifikasi, cek garansi, dan baca ulasan pembeli sebelum memasukkan produk ke keranjang.</p>
@@ -296,7 +85,6 @@
     </div>
   </main>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-top">
@@ -304,7 +92,6 @@
           <span class="logo">Shopee</span>
           <p>Tempat belanja kebutuhan sehari-hari.</p>
         </div>
-
         <nav class="footer-links" aria-label="Tautan Footer">
           <a href="#">Tentang kami</a>
           <a href="#">Pusat bantuan</a>
@@ -312,46 +99,66 @@
           <a href="#">Kebijakan privasi</a>
         </nav>
       </div>
-
-      <div class="footer-bottom">
-        <p>&copy; 2026 Shopee. Seluruh hak cipta dilindungi.</p>
-      </div>
+      <p class="footer-bottom">&copy; 2026 Shopee. Seluruh hak cipta dilindungi.</p>
     </div>
   </footer>
 
-  <!-- Interaksi Sederhana -->
   <script>
-    // Tambah ke keranjang
+    const $ = s => document.querySelector(s);
+    const checks = (name, items) => items.map(([v, label]) =>
+      `<label class="checkbox-item"><input type="checkbox" name="${name}" value="${v}" /><span>${label}</span></label>`).join('');
+
+    // Subkategori (dipakai juga untuk filter Kategori)
+    const subcats = [['audio', 'Audio'], ['komputer', 'Komputer &amp; aksesori'], ['ponsel', 'Aksesori ponsel'], ['kamera', 'Kamera']];
+    $('#subcategories').innerHTML = subcats.map(([, l]) => `<button type="button" class="subcat-card">${l}</button>`).join('');
+    $('#subcategories').onclick = e => e.target.matches('.subcat-card') && e.target.classList.toggle('active');
+
+    // Filter
+    const price = ['Harga minimum', 'Harga maksimum'].map(l => `<input type="text" placeholder="Rp ${l}" aria-label="${l}" />`).join('');
+    const filters = {
+      'Kategori': checks('kategori', subcats),
+      'Harga': `<div class="price-inputs">${price}</div>`,
+      'Merek': checks('merek', [['audiokita', 'AudioKita'], ['gawai', 'Gawai'], ['digitalpro', 'DigitalPro']]),
+      'Lokasi toko': checks('lokasi', [['jakarta', 'Jakarta'], ['bandung', 'Bandung'], ['surabaya', 'Surabaya']]),
+      'Penilaian': checks('rating', [['4plus', '<span class="star-icon">&#9733;</span> 4 ke atas']]) + 
+      checks('ongkir', [['gratis', 'Gratis ongkir']])
+    };
+    $('#filter-form').innerHTML =
+      Object.entries(filters).map(([title, html]) => `<div class="filter-group"><h3>${title}</h3>${html}</div>`).join('') +
+      '<button type="submit" class="btn btn-orange btn-block">Terapkan filter</button>';
+
+    // Produk: [judul, harga, toko, kota, rating, terjual, id foto Unsplash]
+    const products = [
+      ['Headphone wireless', '249.000', 'Toko Audio', 'Jakarta', '4,9', '120+', '1505740420928-5e560c06d30e'],
+      ['Keyboard wireless', '179.000', 'Gawai Kita', 'Jakarta', '4,8', '90+', '1587829741301-dc798b83add3'],
+      ['Mouse nirkabel', '99.000', 'Digital Jaya', 'Surabaya', '4,8', '200+', '1527864550417-7fd91fc51a46'],
+      ['Speaker bluetooth mini', '189.000', 'Toko Audio', 'Jakarta', '4,7', '150+', '1608043152269-423dbba4e7e1'],
+      ['Powerbank 10.000 mAh', '199.000', 'Gawai Kita', 'Jakarta', '4,9', '180+', '1609091839311-d5365f9ff1c5'],
+      ['Kamera web HD 1080p', '289.000', 'Digital Jaya', 'Surabaya', '4,8', '65+', '1588508065123-287b28e013da']
+    ];
+    $('#product-grid').innerHTML = products.map(([title, price, shop, city, rate, sold, img]) => `
+      <article class="product-card">
+        <div class="product-img-wrapper"><img src="https://images.unsplash.com/photo-${img}?auto=format&fit=crop&w=600&q=80" 
+          alt="${title}" loading="lazy" /></div>
+        <div class="product-info">
+          <h3 class="product-title">${title}</h3>
+          <p class="product-price">Rp${price}</p>
+          <p class="product-meta">${shop} &bull; ${city}</p>
+          <p class="product-rating"><span class="star-icon">&#9733;</span> ${rate} &bull; Terjual ${sold}</p>
+          <button type="button" class="btn btn-orange btn-block">+ Keranjang</button>
+        </div>
+      </article>`).join('');
+
+    // Keranjang
     let count = 0;
-    const cartCounter = document.getElementById('cart-counter');
-    document.querySelectorAll('.btn-add-cart').forEach(btn => {
-      btn.addEventListener('click', () => {
-        count++;
-        cartCounter.textContent = `Keranjang (${count})`;
-      });
-    });
+    $('#product-grid').onclick = e => e.target.matches('.btn') && ($('#cart-counter').textContent = `Keranjang (${++count})`);
 
-    // Reset Filter
-    document.getElementById('reset-filter').addEventListener('click', () => {
-      document.getElementById('filter-form').reset();
-    });
-
-    // Subkategori pill toggle
-    document.querySelectorAll('.subcat-card').forEach(card => {
-      card.addEventListener('click', () => {
-        card.classList.toggle('active');
-      });
-    });
-
-    // Pagination nomor halaman
-    const pageNums = document.querySelectorAll('.page-num');
-    pageNums.forEach(num => {
-      num.addEventListener('click', () => {
-        pageNums.forEach(n => n.classList.remove('active'));
-        num.classList.add('active');
-      });
-    });
+    // Paginasi
+    $('.pagination').onclick = e => {
+      if (!e.target.matches('.page-num')) return;
+      $('.page-num.active').classList.remove('active');
+      e.target.classList.add('active');
+    };
   </script>
-
 </body>
 </html>
